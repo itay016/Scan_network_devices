@@ -20,10 +20,9 @@ class Network(object):
             network=self.ip+"/24"
         else:
             network = self.ip + "/24"
-        print("scanning please wait----------------------->")
+        print("scanning ----------------------->")
         nm = nmap.PortScanner()
         nm.scan(hosts=network,arguments='-sn')
-        #host_list = [(x,nm[x]['status']['state'],nm[x]['0']['name']) for x in nm.all_hosts()]
         allin = pd.DataFrame()
         for x in nm.all_hosts():
             try:
@@ -47,6 +46,3 @@ if __name__=="__main__":
     df.to_csv(outfile)
     pivot_ui(df, rows=list(df.index), cols=list(df.columns),outfile_path=fileout)
     webbrowser.open('file://' + os.path.realpath(fileout))
-
-    print()
-    #pivot_ui(df)
