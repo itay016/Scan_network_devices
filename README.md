@@ -1,36 +1,32 @@
-## Layer 2 network neighbourhood discovery tool ##
+## Layer 2 Scan_network_devices ##
 
-Tool to discover hosts in your network using ARP pings.
-See also [this question on stackoverflow.com][3]
+Tool to discover devices in your network using nmap -> python.
+
 
 ## Dependencies ##
 
-* Python 2.7 or 3.4+
-* [scapy][1] for networking functions like [arping][2]
+* Python 3+
+* nmap
+*requirements file
+* IPython
+## Installation Part 0 ##
 
-## Installation ##
+1. install nmap :
+	run file on the directory or form : [namp page](https://nmap.org/download.html)
+2. add nmap to the windows path : enter the windows path and add -> C:\Program Files (x86)\Nmap
+	![path](images/path.jpg)
 
-Either install a recent [scapy][1] with your package manager,
-or setup a [virtual environment][4]:
+## Installation Part 1 ##
 
 ```
-$ virtualenv virtualenv
-$ source virtualenv/bin/activate
-$ pip install -r requirements.txt
+1. pip install requirements 
+1.1 pip install IPython
 ```
 
 ## Usage ##
 
 ```
-$ sudo ./neighbourhood.py [-i <interface>]
+run the python file
+on the run the code will ask for the Default Getway (your router inner ip)
+usually it 192.168.1.1 so if keep without tyoing it will take that getway
 ```
-
-## TODO ##
-
-* IPv6 support
-
-
-[1]: https://scapy.net/
-[2]: http://en.wikipedia.org/wiki/Arping
-[3]: http://stackoverflow.com/questions/207234/list-of-ip-addresses-hostnames-from-local-network-in-python/
-[4]: https://docs.python-guide.org/dev/virtualenvs/
